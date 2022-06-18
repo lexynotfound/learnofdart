@@ -32,7 +32,13 @@ void main(List<String> arguments) {
   //Inisialisasikan variable
   var greetings;
   greetings = 'Namaku Kurnia Raihan Ardian';
+  var birthYear;
+  birthYear = 2002;
   print(greetings);
   var myAge = 20;
   print("Umur Saya adalah =  ${myAge.toString()}");
+
+  //unicode character di dart
+  print("Hi \u2665");
+  print("i  \u{2665} grace");
 }

@@ -1,4 +1,4 @@
-//import 'package:BelajarDart/hello.dart';
+/* import 'package:BelajarDart/belajar_dasar.dart'; */
 
 /* Future adalah sebuah syntax async
   Sedangkan Future.then() adalah sebuah syntax untuk mengambil hasil dari Future

@@ -14,4 +14,4 @@ dev_dependencies:
   test: ^1.16.0
 
 dependencies:
-  audioplayers: ^0.13.7
+  audioplayers: ^1.0.0

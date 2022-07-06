@@ -28,6 +28,55 @@ void sayHello() {
   print('Hello Welcome to Dart');
 }
 
+//Optional parameters
+//Anda memiliki fungsi seperti berikut:
+/* 
+  Satu-satunya cara untuk bisa memanggil fungsi di atas adalah dengan cara berikut:
+  greetNewUser();
+  greetNewUser('grace', 20);
+  greetNewUser('grace');
+  Namun, Dart mendukung optional parameter, 
+  di mana kita tidak wajib mengisi parameter yang diminta oleh fungsi. 
+  Untuk bisa membuat parameter menjadi opsional, kita perlu memasukkannya ke dalam kurung siku
+  seperti contoh berikut:
+  void greetNewUser([String name, int age, bool isVerified]){}
+  Cara ini disebut dengan positional optional parameters. 
+  Dengan optional parameter seperti di atas kita bisa 
+  memanggil fungsi seperti berikut:
+  greetNewUser('Grace', 20, true);
+  greetNewUser('Grace', 20);
+  greetNewUser('Grace');
+  greetNewUser();
+
+  Setiap parameter yang tidak dimasukkan akan memiliki nilai null. 
+  Namun sejak versi 2.12, Dart memiliki fitur null safety di mana suatu variabel secara default tidak bisa memiliki nilai null. 
+  Solusinya, kita bisa menambahkan tanda tanya (?) setelah tipe data supaya bisa menyimpan nilai null atau memberikan nilai parameter default. 
+  contoh code : void greetNewUser([String? name, int? age, bool? isVerified]) {}
+  Nilai ini akan digunakan jika kita tidak memasukkan parameternya.
+  
+  Note : Kita akan membahas lebih dalam fitur null safety pada materi “Null Safety”.
+
+  Dengan cara ini,urutan parameter masih perlu diperhatikan
+  sehingga jika kita hanya ingin mengisi parameter terakhir, 
+  kita perlu mengisi parameter sebelumnya dengan null.
+  greetNewUser(null, null, true);
+
+  Untuk mengatasi masalah di atas kita bisa memanfaatkan named optional parameters. 
+  Pada opsi ini kita menggunakan kurung kurawal pada parameter.
+  contoh : void greetNewUser({String name, int age, bool isVerified})
+  */
+
+void greetNewUser([String? name, int? age, bool? isVerified]) {
+  /*
+    Cara ini disebut dengan positional optional parameters. 
+    Dengan optional parameter seperti di atas kita bisa memanggil fungsi seperti berikut:
+   */
+  greetNewUser('grace', 20, true);
+  greetNewUser('grace', 20);
+  greetNewUser('grace');
+  greetNewUser();
+}
+
 /* returnType functionName(type param1, type param2) {
   // code
   return result;
@@ -39,8 +88,17 @@ void main(List<String> args) {
       2015); // output : Halo Dicoding! Tahun ini Anda berusia 7 tahun
   var firstNumber = 10;
   var secondNumber = 20;
+
   print(
       "rata-rata dari $firstNumber dan $secondNumber adalah ${(firstNumber + secondNumber) / 2}");
+  /*
+    Jika fungsi hanya memiliki satu baris kode atau instruksi di dalamnya, 
+    maka bisa disingkat dengan anotasi =>. 
+    Ini juga dikenal dengan nama arrow syntax.
+    double average(num num1, num num2) => (num1 + num2) / 2;
+    sayHello() => print('Hello`Welcome to Dart');
+   */
+  double average(num num1, num num2) => (num1 + num2) / 2;
   print(
       "rata-rata dari $firstNumber dan $secondNumber adalah ${average(firstNumber, secondNumber)}");
 }
